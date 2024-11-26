@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="bootstrap.css"> -->
+    <!-- <link rel="stylesheet" href="cssFiles/style.css"> -->
+    <link rel="stylesheet" href="cssFiles/home.css">
+    <!-- <link rel="icon" href=""> -->
+    <title>Home page</title>
+</head>
+<body>
+
+
+<!-- -----------------Search Div----------- -->
+<div class="qsearch" id="qsearch">
+    <i class="fa-solid fa-x" onclick="hideQsearch()"></i>
+
+    <div class="search">
+        <div class="input">
+            <input type="text" name="" id="textInput" placeholder="search">
+            <i class="fa-regular fa-magnifying-glass"></i>
+        </div>
+        <i class="fa-solid fa-microphone" id="startButton" onclick="startRecording()"></i>
+        <i class="fa-solid fa-microphone-slash" id="stopButton" onclick="stopRecording()" style="display: none;"></i>
+    </div>
+
+    <div class="recent">
+        <p>recent searchs</p>
+
+        <div class="recents">
+            <div class="rec">
+                <p>laptops</p>
+                <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="rec">
+                <p>laptops</p>
+                <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="rec">
+                <p>laptops</p>
+                <i class="fa-solid fa-x"></i>
+            </div>
+            <div class="rec">
+                <p>laptops</p>
+                <i class="fa-solid fa-x"></i>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="prods">
+
+        <div class="prod">
+            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <div class="info">
+                <p class="title">smart watch 1</p>
+                <p>Lorem Ipsum has been the industry's standard.</p>
+                <p class="price">price: <span>1000 l.e</span> </p>
+            </div>
+        </div>
+        <div class="prod">
+            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <div class="info">
+                <p class="title">smart watch 1</p>
+                <p>Lorem Ipsum has been the industry's standard.</p>
+                <p class="price">price: <span>1000 l.e</span> </p>
+            </div>
+        </div>
+        <div class="prod">
+            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <div class="info">
+                <p class="title">smart watch 1</p>
+                <p>Lorem Ipsum has been the industry's standard.</p>
+                <p class="price">price: <span>1000 l.e</span> </p>
+            </div>
+        </div>
+        <div class="prod">
+            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <div class="info">
+                <p class="title">smart watch 1</p>
+                <p>Lorem Ipsum has been the industry's standard.</p>
+                <p class="price">price: <span>1000 l.e</span> </p>
+            </div>
+        </div>
+        <div class="prod">
+            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <div class="info">
+                <p class="title">smart watch 1</p>
+                <p>Lorem Ipsum has been the industry's standard.</p>
+                <p class="price">price: <span>1000 l.e</span> </p>
+            </div>
+        </div>
+        <div class="prod">
+            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <div class="info">
+                <p class="title">smart watch 1</p>
+                <p>Lorem Ipsum has been the industry's standard.</p>
+                <p class="price">price: <span>1000 l.e</span> </p>
+            </div>
+        </div>
+        <div class="prod">
+            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <div class="info">
+                <p class="title">smart watch 1</p>
+                <p>Lorem Ipsum has been the industry's standard.</p>
+                <p class="price">price: <span>1000 l.e</span> </p>
+            </div>
+        </div>
+        <div class="prod">
+            <img src="product2/1.png" alt="productImg" loading="lazy">
+            <div class="info">
+                <p class="title">smart watch 1</p>
+                <p>Lorem Ipsum has been the industry's standard.</p>
+                <p class="price">price: <span>1000 l.e</span> </p>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<script>
+    let recognition;
+    let isRecording = false;
+
+    // التحقق من دعم المتصفح لميزة التعرف على الصوت وإنشاء كائن recognition
+    if ('webkitSpeechRecognition' in window) {
+      recognition = new webkitSpeechRecognition();
+      recognition.lang = 'en-US'; // تعيين اللغة إلى الإنجليزية
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      // التعامل مع النتيجة النهائية للنص
+      recognition.onresult = function(event) {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById("textInput").value = transcript;
+        console.log("Recognized text:", transcript);
+      };
+
+      // معالجة الخطأ أثناء التسجيل
+      recognition.onerror = function(event) {
+        console.error("Recognition error:", event.error);
+      };
+    } else {
+      alert("Sorry, your browser does not support speech recognition.");
+    }
+
+    // بدء التسجيل
+    function startRecording() {
+      if (recognition && !isRecording) {
+        recognition.start();
+        isRecording = true;
+        console.log("Recording started...");
+        document.getElementById("startButton").style.display = "none";
+        document.getElementById("stopButton").style.display = "flex";
+      }
+    }
+
+    // إنهاء التسجيل
+    function stopRecording() {
+      if (recognition && isRecording) {
+        recognition.stop();
+        isRecording = false;
+        console.log("Recording stopped.");
+                document.getElementById("startButton").style.display = "flex";
+        document.getElementById("stopButton").style.display = "none";
+      }
+    }
+
+
+    function hideQsearch() {
+    const qsearch = document.getElementById("qsearch");
+    qsearch.classList.add("hide");
+    qsearch.classList.remove("show");
+
+    setTimeout(() => {
+        qsearch.style.display = "none";
+    }, 10);
+}
+
+</script>
+
+
+
+<!-- -------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+    <!-- ----------------------ARROW----------------------------------------------- -->
+    <!-- <a href="#home">
+        <svg xmlns="http://www.w3.org/2000/svg" id="arrow" class="arrow" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+        </svg>
+    </a> -->
+    <!-- -------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------- -->
+    <nav>
+        <div class="logo">
+            <img src="main/logo.png" alt="">
+            <p>smartTech</p>
+        </div>
+        <div class="links">
+            <a href="#">home</a>
+            <a href="#">shop</a>
+            <a href="#">specifications</a>
+            <a href="#">about us</a>
+            <a href="#">contact us</a>
+        </div>
+        <div class="icons">
+            <i class="fa-regular fa-magnifying-glass" id="searchIcon"></i>
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-regular fa-cart-shopping"></i>
+        </div>
+    </nav>
+    <!-- -------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------- -->
+
+    <div class="carousel">
+        <span></span>
+        <span></span>
+        <img src="main/blob.png"></img>
+        <div class="info">
+            <p>a comfortable experience <span>for your electronic world</span> </p>
+            <p>The new 18 inch bezeless display offering a 4K display with smart screen feature.</p>
+            <a href="#">shop now</a>
+        </div>
+        <div class="list">
+            <div class="items">
+                <div class="item">
+                    <img src="product2/1.png" loading="lazy">
+                </div>
+                
+                <div class="item">
+                    <img src="product1/1.png" loading="lazy" id="rot">
+                </div>
+    
+                <div class="item">
+                    <img src="product3/1.png" loading="lazy">
+                </div>
+    
+                <div class="item">
+                    <img src="product4/1.png" loading="lazy">
+                </div>
+    
+                <div class="item">
+                    <img src="product5/1.png" loading="lazy">
+                </div>
+            </div>
+
+            <div class="arrows">
+                <button id="before">
+                    <i class="fa-regular fa-angle-left"></i>
+                </button>
+                <span></span><span></span><span></span><span></span>
+                <button id="after">
+                    <i class="fa-regular fa-angle-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+<div class="best">
+    <div class="head">
+        <p id="title">best seller</p>
+        <span id="span"></span>
+        <div class="btns">
+            <button class="prev">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <button class="next">
+                <i class="fa fa-angle-right"></i>
+            </button>
+        </div>
+    </div>
+    <div class="track"></div>
+</div>
+
+
+
+
+<!-- ------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------ -->
+<div class="adv1">
+    <div class="info left">
+        <p>asus zenbook duo <span>the <span>airPods</span> of tomorrow</span></p>
+        <a href="#">shop pre order</a>
+        </div>
+    <img src="banners/adv1.png" alt="" class="reveal">
+</div>
+<!-- ------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------ -->
+<div class="deals">
+    <div class="head">
+        <p id="title">deals of the day</p>
+        <span id="span"></span>
+    </div>
+    <div class="content">
+        <i class="fa-solid fa-angles-left prev" id="prevdeal"></i>
+        <div class="track dealstrack">
+            
+        </div>
+        
+        <i class="fa-solid fa-angles-right next" id="nextdeal"></i>
+        </div>
+
+    </div>
+</div>
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="jsFiles/jquery.hislide.js"></script>
+<script>
+    $('.dealstrack').hslide();
+</script> -->
+<!-- ------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------ -->
+
+<div class="colls">
+    <div class="head">
+        <p id="title">special collection offers</p>
+        <span id="span"></span>
+        <div class="btns">
+            <button class="prev">
+                <i class="fa fa-angle-left"></i>
+            </button>
+            <button class="next">
+                <i class="fa fa-angle-right"></i>
+            </button>
+        </div>
+    </div>
+    <div class="track"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------ -->
+
+<div class="servs">
+    <div class="head">
+        <p id="title">our services</p>
+        <span id="span"></span>
+    </div>
+    <div class="content"></div>
+</div>
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+
+<div class="adv2">
+    <div class="info left">
+    <p>asus zenbook duo <span>the <span>laptop</span> of tomorrow</span></p>
+    <a href="#">shop pre order</a>
+    </div>
+    <img src="banners/adv2.png" alt="" class="reveal">
+</div>
+
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+
+
+
+
+
+<!-- --------------------------------------------------- -->
+<!-- -------------------Footer-------------------------- -->
+<footer>
+<div class="div1">
+    <div class="logo">
+        <img src="main/logo.png" alt="logoImg" loading="lazy">
+        <p>smartTech</p>
+    </div>
+    <div class="accs">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-telegram"></i>
+    </div>
+</div>
+
+
+<div class="div2">
+    <div class="col">
+        <h1>links</h1>
+        <div class="links">
+            <a href="">home page</a>
+        <a href="">about us</a>
+        <a href="">shop</a>
+        </div>
+    </div>
+    <div class="col">
+        <h1>help</h1>
+        <div class="links">
+            <a href="">contact</a>
+        <a href="">our services</a>
+        <a href="">privacy</a>
+        </div>
+    </div>
+    <div class="col">
+        <h1>support</h1>
+        <div class="links">
+            <a href="">help center</a>
+        <a href="">my account</a>
+        <a href="">contact us</a>
+        </div>
+    </div>
+    <div class="col">
+        <h1>contact us</h1>
+        <div class="links">
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                roanoke698@gamil.com
+            </p>
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +20 236 733 567 25
+            </p>
+        </div>
+    </div>
+
+    <div class="news">
+        
+    </div>
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+
+
+
+<!-- <script src="bootstrap.js"></script> -->
+<script src="jsFiles/main.js"></script>
+<script src="jsFiles/home.js"></script>
+</body>
+</html>

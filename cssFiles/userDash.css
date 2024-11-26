@@ -1,0 +1,933 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 15vh;
+}
+@font-face {
+    font-family: "Arial Rounded MT Bold" ;
+    src: url(../font1/arialroundedmtbold.ttf);
+}
+
+
+:root{
+    --font1: "Arial Rounded MT Bold" ;
+    --font2: sans-serif ;
+    --color1: #30B6B9 ;
+    --color2: #fff ;
+    --color3: #000 ;
+    --color4:#2F8587;
+    --shadow1: 0 4px 4px #00000040 ;
+    --shadow2: 0 4px 4px #000 ;
+}
+body {
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(114.8deg, #323841 4.8%, #21252B 95.2%);
+    gap: 2vh;
+    position: relative;
+}
+
+nav{
+    height: 10vh;
+    width: 100%;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 99999999;
+    border-bottom: 1px solid var(--color2);
+}
+
+.dash{
+    width: 100%;
+    height: 100vh;
+    /* margin-top: 11vh; */
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    /* padding-top: 2vh; */
+}
+
+.dash .bar{
+    width: 25%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 5vh;
+    /* padding-inline: 10px; */
+    padding-block: 20px;
+    background-color: var(--color4);
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #000;
+
+
+}
+.dash .bar h1{
+    color: var(--color2);
+    text-transform: capitalize;
+    font-family: var(--font1);
+    margin-left: 20px;
+}
+.dash .bar .items{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    height: 80%;
+    width:100%;
+    gap: 5vh;
+}
+.dash .bar .items .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* padding-inline: 10px; */
+    gap: 10px;
+    position: relative;
+    padding: 0px 0px 20px 0px;
+    cursor: pointer;
+}
+
+/* .dash .bar .items .item:not(:last-child){
+    border-bottom: 1px solid var(--color2);
+} */
+.dash .bar .items .item:not(:last-child)::before{
+    content: '';
+    position: absolute;
+    background-color: var(--color2);
+    height: 1px;
+    width: 100%;
+    bottom: -10%;
+    left: 0;
+}
+.dash .bar .items .item.active .info p:nth-child(1){
+    color: var(--color1);
+    text-shadow: var(--shadow1);
+}
+.dash .bar .items .item i{
+    color: var(--color2);
+    font-size: 20px;
+}
+.dash .bar .items .item .info{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 5px;
+    width: 80%;
+}
+.dash .bar .items .item .info p{
+    color: var(--color2);
+    text-transform: capitalize;
+}
+.dash .bar .items .item .info p:nth-child(1){
+    font-family: var(--font1);
+    font-size: 22px;
+}
+.dash .bar .items .item .info p:nth-child(2){
+    font-size: 14px;
+    font-family: var(--font2);
+}
+
+
+
+
+
+
+
+
+.dash .account,
+.dash .myorders,
+.dash .whish{
+    width: 70%;
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    background: linear-gradient(338.82deg, #21252B 0.06%, #323841 50%, #21252B 99.94%);
+    border-radius: 10px;
+    padding-inline: 3%;
+    padding-block: 2%;
+    gap: 5vh;
+    box-shadow: 0px 4px 4px 0px #000;
+}
+.dash .account{
+    overflow-y: auto;
+}
+.dash .account::-webkit-scrollbar{
+    background-color: transparent;
+    width: 5px ;
+}
+.dash .account::-webkit-scrollbar-thumb{
+    background-color: var(--color1);
+    border-radius: 10px;
+}
+.dash .account >h2,
+.dash .myorders >h2{
+    color: var(--color2);
+    text-transform: capitalize;
+    font-family: var(--font1);
+}
+    .dash .account > .title{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        width: 100%;
+        height: 10%;
+        gap: 5px;
+    }
+    .dash .account > .title h1{
+        color: var(--color2);
+        font-family: var(--font1);
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+    .dash .account > .title h1 span{
+        color: var(--color1);
+    }
+    .dash .account > .title p{
+        color: var(--color2);
+        font-family: var(--font2);
+        font-size: 18px;
+    }
+.dash .account .carts{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 50%;
+    height: 20%;
+    gap: 10%;
+}
+.dash .account .carts .card{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-direction: column;
+    width: 40%;
+    height: 100px;
+    background: linear-gradient(88.75deg, #373D47 0.93%, #3D4550 50%, #373D47 99.07%);
+    box-shadow: 0px 4px 4px 0px #000;
+    border-radius: 10px;
+    padding-inline: 2%;
+}
+.dash .account .carts .card i{
+    color: var(--color4);
+    font-size: 30px;
+}
+.dash .account .carts .card p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-family: var(--font1);
+    color: var(--color2);
+    width: 100%;
+    text-transform: capitalize;
+}
+.dash .account .carts .card p span{
+    color: var(--color1);
+}
+
+
+
+
+.dash .account .orders,
+.dash .myorders .orders{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+}
+.dash .account .orders{
+    /* overflow-y: auto; */
+    gap: 10px;
+}
+
+.dash .account .orders .order,
+.dash .myorders  .orders .order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 48%;
+    background: linear-gradient(88.75deg, #373D47 0.93%, #3D4550 50%, #373D47 99.07%);
+    padding: 10px 3%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #000;
+
+
+}
+.dash .account .orders .order .side1,
+.dash .myorders .orders .order .side1{
+    width: 20%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    height: 100%;
+    gap: 20%;
+}   
+.dash .account .orders .order .side1 .no,
+.dash .myorders .orders .order .side1 .no{
+    color: var(--color1);
+    text-transform: capitalize;
+    font-family: var(--font1);
+    text-shadow: 0px 4px 4px  #00000040;
+    font-size: 22px;
+    }
+.dash .account .orders .order .side1 p,
+.dash .myorders .orders .order .side1 p{
+    color: var(--color2);
+    text-transform: capitalize;
+    font-family: var(--font2);
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+}
+.dash .account .orders .order .side2,
+.dash .myorders .orders .order .side2{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.dash .account .orders .order .side2 .sticky,
+.dash .myorders .orders .order .side2 .sticky{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-transform: capitalize;
+    color: var(--color2);
+    padding: 5px;
+    background-color: var(--color4);
+    font-family: var(--font1);
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px 0px #000;
+    transition: 1s;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.dash .account .orders .order .side2 .sticky.active,
+.dash .myorders .orders .order .side2 .sticky.active{
+    background: #86B4B56E;
+    border: 1px solid #30B6B9;
+    box-shadow: 0px 4px 4px 0px #00000040,
+    0px 4px 4px 0px #2F8587;
+    transition: 1s;
+
+/* box-shadow: 0px 4px 4px 0px #2F8587; */
+
+}
+
+.dash .account .orders .order .side2 .title,
+.dash .myorders .orders .order .side2 .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-start;
+    /* flex-direction: column; */
+    width: 40%;
+    height: 20%;
+}
+.dash .account .orders .order .side2 .title p:nth-child(1),
+.dash .myorders .orders .order .side2 .title p:nth-child(1){
+    color: var(--color2);
+    background-color: var(--color4);
+    font-size: 15px;
+    padding: 0px 5px;
+    text-transform: uppercase;
+    font-family: var(--font1);
+}
+.dash .account .orders .order .side2 .title p:nth-child(2),
+.dash .myorders .orders .order .side2 .title p:nth-child(2){
+    color: var(--color2);
+    text-transform: capitalize;
+    font-size: 17px;
+    font-family: var(--font1);
+}
+.dash .account .orders .order .side2 .status,
+.dash .myorders .orders .order .side2 .status{
+    width: 85%;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.dash .account .orders .order .side2 .status::before,
+.dash .myorders .orders .order .side2 .status::before{
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color2);
+    width: 90%;
+    height: 1px;
+    box-shadow: 0px 4px 4px 0px #FFFFFF3B;
+    z-index: -1;
+    box-shadow: 0px 4px 4px 0px #FFFFFF3B;
+
+}
+.dash .account .orders .order .side2 .status .statu,
+.dash .myorders .orders .order .side2 .status .statu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.dash .account .orders .order .side2 .status .statu i,
+.dash .myorders .orders .order .side2 .status .statu i{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color1);
+    font-size: 25px;
+    background-color: #434b56;
+    border: 2px solid var(--color1);
+}
+.dash .account .orders .order .side2 .status .statu p,
+.dash .myorders .orders .order .side2 .status .statu p{
+    color: var(--color2);
+    font-family: var(--font2);
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+
+
+/* .dash .account{
+    display: none;
+} */
+
+/* ------------------------- */
+/* ------------------------- */
+/* .dash .myorders{
+    display: none;
+} */
+.dash .myorders{
+    gap: 20px;
+    padding-block: 1%;
+    display: flex;
+}
+.dash .myorders .orders{
+    overflow-y: auto;
+    gap: 3.5vh;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.dash .myorders .orders::-webkit-scrollbar{
+    background-color: transparent;
+    width: 5px ;
+}
+.dash .myorders .orders::-webkit-scrollbar-thumb{
+    background-color: var(--color1);
+    border-radius: 10px;
+}
+.dash .myorders .orders .order,
+.dash .account .orders .order{
+    height: auto;
+    flex-direction: column;
+    padding: 0;
+    /* gap: 50px; */
+}
+.dash .myorders .orders .order .all,
+.dash .account .orders .order .all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    /* flex-direction: column; */
+    width: 100%;
+    height: 170px;
+    box-shadow: 0px 4px 4px 0px #000;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.dash .myorders .orders .order .info,
+.dash .account .orders .order .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background: #51596659;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: 1s;
+    height: 0px;
+    width: 0;
+    padding: 0;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+.dash .myorders .orders .order .info.active,
+.dash .account .orders .order .info.active{
+    transition-property: clip-path , width , padding , height;
+    transition-delay: 1s , 0s ,0s , 0s ;
+    height: 300px;
+    width: 100%;
+    padding: 10px 5%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    
+}
+.dash .myorders .orders .order .info.hide,
+.dash  .account .orders .order .info.hide{
+    transition-delay: 0s , 1s ,1s , 1s ;
+    transition-property: clip-path , width , padding , height;
+    height: 0px;
+    width: 0;
+    padding: 0;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
+}
+.dash .myorders .orders .order .info img,
+.dash  .account .orders .order .info img{
+    width: 20%;
+    background: linear-gradient(268.21deg, #373D47 1.45%, #69717C 50%, #373D47 98.55%);
+    padding: 30px;
+    /* height: 90%; */
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px #000;
+
+}
+.dash .myorders .orders .order .info .det,
+.dash .account .orders .order .info .det{
+
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-direction: column;
+}
+.dash .myorders .orders .order .info .det .infos,
+.dash .account .orders .order .info .det .infos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-direction: column;
+    height: 60%;
+}
+.dash .myorders .orders .order .info .det .infos .name,
+.dash .account .orders .order .info .det .infos .name{
+    color: var(--color1);
+    text-transform: capitalize;
+    font-family: var(--font1);
+    font-size: 22px;
+    text-shadow: 0px 4px 4px  #00000040;
+    
+}
+.dash .myorders .orders .order .info .det .infos > p:nth-child(2),
+.dash .account .orders .order .info .det .infos > p:nth-child(2){
+    font-size: 20px;
+    color: var(--color2);
+    font-family: var(--font2);
+}
+.dash .myorders .orders .order .info .det .infos > p:nth-child(2) span,
+.dash .account .orders .order .info .det .infos > p:nth-child(2) span{
+    color: var(--color1);
+}
+.dash .myorders .orders .order .info .det .infos > p:nth-child(3),
+.dash .account .orders .order .info .det .infos > p:nth-child(3){
+    text-transform: capitalize;
+    color: var(--color2);
+    font-family: var(--font1);
+    text-shadow: 0px 4px 4px  #00000040;
+    
+}
+.dash .myorders .orders .order .info .det .infos > p:nth-child(4),
+.dash .account .orders .order .info .det .infos > p:nth-child(4){
+    color: var(--color2);
+    font-size: 20px;
+    font-family: var(--font2);
+    text-transform: capitalize;
+}
+.dash .myorders .orders .order .info .det .infos > p:nth-child(4) span,
+.dash .account .orders .order .info .det .infos > p:nth-child(4) span{
+    color: var(--color1);
+}
+.dash .myorders .orders .order .info .det >div:nth-child(2),
+.dash .account .orders .order .info .det >div:nth-child(2){
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dash .myorders .orders .order .info .det >div:nth-child(2) > p,
+.dash .account .orders .order .info .det >div:nth-child(2) > p{
+    text-transform: capitalize;
+    color: var(--color2);
+    background: #2F8587A6;
+    padding: 10px 20px ;
+    border-radius: 2px;
+    font-family: var(--font1);
+}
+/* ----------------------------- */
+/* ----------------------------- */
+
+.dash .profile{
+    width: 70%;
+    height: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    border-radius: 10px;
+    padding-inline: 3%;
+    padding-block: 2%;
+    gap: 5vh;
+    box-shadow: 0px 4px 4px 0px #000;
+    background: linear-gradient(338.82deg, #21252B 0.06%, #323841 50%, #21252B 99.94%);
+}
+.dash .profile .pic{
+    width: 30%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(88.75deg, #373D47 0.93%, #3D4550 50%, #373D47 99.07%);
+    box-shadow: 0px 4px 4px 0px #000;
+    border-radius: 10px;
+}
+.dash .profile .pic .title,
+.dash .profile .details .title{
+    text-transform: capitalize;
+    color: var(--color1);
+    font-family: var(--font1);
+    font-size: 20px;
+    width: 100%;
+    padding: 10px 10px;
+    text-shadow: 0px 4px 4px #00000040;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+.dash .profile .pic .content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.dash .profile .pic .content img{
+    width: 50%;
+    /* height: 60%; */
+    border-radius: 50%;
+    background-color:#c3d5d5;
+    box-shadow: 0px 4px 4px 0px #000;
+
+/* box-shadow: 0px 4px 4px 0px #00000040; */
+
+}
+.dash .profile .pic .content span{
+    color: var(--color2);
+    font-family: var(--font2);
+    font-size: 15px;
+}
+.dash .profile .pic .content label{
+    width: 90%;
+    background-color: var(--color4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 4px 0px #000;
+    border-radius: 4px;
+    padding: 5px;
+    }
+.dash .profile .pic .content label input{
+    text-transform: capitalize;
+    color: var(--color2);
+    font-family: var(--font1);
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+    width: 90%;
+}
+
+
+
+.dash .profile .details{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(88.75deg, #373D47 0.93%, #3D4550 50%, #373D47 99.07%);
+    box-shadow: 0px 4px 4px 0px #000;
+    border-radius: 10px;
+}
+.dash .profile .details form{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-inline: 5%;
+}
+.dash .profile .details form .input{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    gap: 10px;
+    text-emphasis: 29%;
+}
+.dash .profile .details form .input span{
+    position: absolute;
+    bottom: -20px;
+    color: red;
+    text-transform: capitalize;
+    font-family: var(--font2);
+    font-size: 14px;
+    display: none;
+}
+.dash .profile .details form .input label{
+    text-transform: capitalize;
+    color: var(--color2);
+    font-family: var(--font1);
+    font-size: 17px;
+}
+.dash .profile .details form .input input{
+    width: 100%;
+    height: 40px;
+    background: #5159664A;
+    box-shadow: 0px 4px 4px 0px #000;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--color2);
+}
+.dash .profile .details form .input:nth-child(2),
+.dash .profile .details form .input:nth-child(3){
+    width: 45%;
+}
+
+.dash .profile .details >input{
+    background-color: var(--color4);
+    border: none;
+    text-transform: capitalize;
+    color: var(--color2);
+    border-radius: 5px;
+    font-family: var(--font1);
+    padding: 10px 30px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0px #000;
+}
+/* ----------------------------- */
+/* ----------------------------- */
+
+.dash .whish{
+    height: auto;
+    overflow-y: auto;
+}
+.dash .whish::-webkit-scrollbar{
+    background-color: transparent;
+    width: 5px ;
+}
+.dash .whish::-webkit-scrollbar-thumb{
+    background-color: var(--color1);
+    border-radius: 10px;
+}
+.dash .whish > p{
+    color: var(--color2);
+    text-transform: capitalize;
+    font-family: var(--font1);
+    font-size: 30px;
+}
+.dash .whish .witem{
+    width: 100%;
+    height: 200px;
+    padding: 10px 5%;
+    border-radius: 10px;
+    box-shadow:  0px 4px 4px 0px #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(88.75deg, #373D47 0.93%, #3D4550 50%, #373D47 99.07%);
+}
+
+.dash .whish .witem img{
+    width: 15%;
+    height: 120px;
+}
+.dash .whish .witem .info {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+}
+
+.dash .whish .witem .info h2{
+    color: var(--color1);
+    text-transform: capitalize;
+    font-family: var(--font1);
+    text-shadow: 0px 4px 4px  #00000040;
+
+}
+.dash .whish .witem .info .stars{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0px 4px 4px #00000040;
+
+}
+.dash .whish .witem .info .stars i{
+    color: #FBB500;
+    font-size: 18px;
+}
+.dash .whish .witem .info ul{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 40%;
+    gap: 10%;
+
+}
+.dash .whish .witem .info ul li{
+    color: var(--color2);
+    font-family: var(--font2);
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.dash .whish .witem .info ul li span{
+    color: var(--color1);
+}
+.dash .whish .witem .info2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 20%;
+    position: relative;
+}
+.dash .whish .witem .info2::before{
+    content: '';
+    position: absolute;
+    left: -20%;
+    height: 111%;
+    width: 1px;
+    background-color: #323841;
+    box-shadow: 0px 4px 4px 0px #FFFFFF3B;
+
+}
+.dash .whish .witem .info2 p:nth-child(1){
+    color: var(--color2);
+    font-family: var(--font1);
+    text-transform: uppercase;
+    font-size: 20px;
+    width: 100%;
+    text-align: start;
+}
+.dash .whish .witem .info2 p:nth-child(2){
+    color: var(--color1);
+    font-family: var(--font2);
+    font-size: 18px;
+    text-transform: capitalize;
+    width: 100%;
+    text-align: start;
+}
+.dash .whish .witem .info2 button,
+.dash .whish .witem .info2 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid transparent;
+    color: var(--color2);
+    width: 180px;
+    height: 30px;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-family: var(--font1);
+    background-color: var(--color4);
+    box-shadow: 0px 4px 4px 0px #00000040,
+                0px 4px 4px 0px #00000040;
+    border-radius: 5px;
+    transition: .5s;
+    cursor: pointer;
+}
+.dash .whish .witem .info2 a:hover{
+    background-color: transparent;
+    border: 1px solid var(--color1);
+}   
+.dash .whish .witem .info2 button:hover{
+    background-color: var(--color4);
+    border: 1px solid transparent;
+}
+.dash .whish .witem .info2 button{
+    border: 1px solid var(--color1);
+    background-color: transparent;
+}
+.dash .whish .witem .info2 label{
+    /* text-transform: capitalize; */
+    color: var(--color2);
+    font-family: var(--font2);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.dash .whish .witem .info2 label input{
+    accent-color: var(--color1);
+    color: var(--color2);
+}
+
+
+
+
+/* ----------------------------- */
+/* ----------------------------- */
+
+
+
+
+.dash .profile, 
+.dash .myorders,
+.dash .account
+.dash .whish{
+    display: none;
+}
+.dash .mainCard.active2{
+    display: flex;
+}
+.dash .mainCard.hide2{
+    display: none;
+}

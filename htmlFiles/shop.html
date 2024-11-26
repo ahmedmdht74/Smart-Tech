@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../cssFiles/style.css"> -->
+    <link rel="stylesheet" href="../cssFiles/shop.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <title>Shop Page</title>
+</head>
+<body>
+
+    <nav></nav>
+
+    <div class="head">
+        <div class="search">
+            <div class="input">
+                <input type="text" name="" id="textInput" placeholder="search">
+                <i class="fa-regular fa-magnifying-glass"></i>
+            </div>
+            <i class="fa-solid fa-microphone" id="startButton" onclick="startRecording()"></i>
+            <i class="fa-solid fa-microphone-slash" id="stopButton" onclick="stopRecording()" style="display: none;"></i>
+        </div>
+    </div>
+
+
+<div class="content">
+
+    <div class="filter">
+        <h1>filter</h1>
+        <div class="select-btn">
+            <span>categories</span>
+            <i class="fa-sharp fa-solid fa-triangle"></i>
+        </div>
+        <ul class="options">
+            <li class="option">laptops</li>
+            <li class="option">smartWatches</li>
+            <li class="option">headPhones</li>
+            <li class="option">phones</li>
+            <li class="option">cameras</li>
+            <li class="option">airPods</li>
+            <li class="option">pCs</li>
+            <li class="option">kyeboards</li>
+            <li class="option">jo sticks</li>
+            <li class="option">pS</li>
+            <li class="option">speakers</li>
+        </ul>
+
+        <div class="price">
+            <p>price : 
+                <span class="current-value">500</span>
+            </p>
+            <div class="range">
+            <div class="field">
+                <div class="value left">500 le</div>
+                <div class="value mid">50k le</div>
+                <input type="range" min="1" max="200" value="1" steps="200" id="rangeInput">
+                <div class="value right">100k le</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script>
+        const slideValue = document.querySelector(".current-value");
+        const inputSlider = document.querySelector("#rangeInput");
+        inputSlider.oninput = (()=>{
+          let value = inputSlider.value*500;
+          slideValue.textContent = value;
+        });
+        rangeInput.addEventListener('input', () => {
+        const value = rangeInput.value; 
+        const max = rangeInput.max;    
+        const percentage = (value / max) * 100; 
+        rangeInput.style.background = `linear-gradient(to right, var(--color1) ${percentage}%, var(--color2) ${percentage}%)`;
+    });
+
+      </script>
+
+<!-- <script>
+    const rangeInput = document.getElementById('rangeInput');
+
+    rangeInput.addEventListener('input', () => {
+        const value = rangeInput.value; 
+        const max = rangeInput.max;    
+        const percentage = (value / max) * 100; 
+        rangeInput.style.background = `linear-gradient(to right, var(--color1) ${percentage}%, var(--color2) ${percentage}%)`;
+    });
+</script> -->
+
+
+
+
+
+
+
+
+
+
+    <div class="items">
+        <div class="item">
+            <i class="fa-solid fa-heart fav"></i>
+            <div class="img">
+                <img src="../product4/1.png" alt="">
+            </div>
+            <div class="info">
+                <p class="name">lenovo idealpad</p>
+                <span>slim 3, intel core i3 10th gen</span>
+                <div class="div">
+                    <div class="qty">
+                        <span>-</span>
+                        <span>1</span>
+                        <span>+</span>
+                    </div>
+                    <p class="price">20,000 le</p>
+                </div>
+                <div class="div2">
+                    <div class="stars">
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                        <i class="fa-sharp fa-solid fa-star"></i>
+                    </div>
+                    <button>add to cart</button>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../jsFiles/shop.js"></script>
+</body>
+</html>
