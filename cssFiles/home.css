@@ -14,8 +14,7 @@
 :root{
     --font1: "Arial Rounded MT Bold" ;
     --font2: sans-serif ;
-/*     --color1: #30B6B9 ; */
-    --color1: red ;
+    --color1: #30B6B9 ;
     --color2: #fff ;
     --color3: #000 ;
     --shadow1: #00000040 ;
