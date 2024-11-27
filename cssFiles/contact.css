@@ -264,6 +264,7 @@ body {
     bottom: -60%;
     left: 0;
     color: red;
+    width: 100%;
 }
 .content .right form .input input,
 .content .right form .input textarea{
