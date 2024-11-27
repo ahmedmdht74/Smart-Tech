@@ -1425,46 +1425,99 @@ footer .div2 .col .links p i{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* ------------------------------------- */
+/* ------------------------------------- */
+/* ------------------------------------- */
 @media  (max-width:767px) {
     nav{
         display: none;
     }
-    body{
-        gap: 10vh;
+    footer{
+        display: none;
     }
-    .slider {
+
+    .carousel{
+        height: 100vh;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-inline: 0;
+    }
+    .carousel .info{
         width: 90%;
-        height: 25vh;
     }
-    .features {
-        flex-direction: column;
-        height: auto;
-        gap: 2rem;
-        padding-block: 2rem;
-    }
-    .features .feature{
+    .carousel .info p:nth-child(1) {
+        color: var(--color1);
+        font-size: clamp(1rem, 7vw, 4rem);
         width: 100%;
-        justify-content: space-between;
-        padding-inline: 10px;
-        border-right: none;
-
+        text-align: start;
+        line-height: 30px;
     }
-    .features .feature .info {
-        width: 70%;
+    .carousel .info p:nth-child(1) span{
+        font-size: clamp(1rem, 6vw, 4rem);
     }
+    .carousel .info p:nth-child(2) {
+        color: var(--color2);
+        font-size: clamp(1rem, 4vw, 4rem);
+        width: 100%;
+    }
+    .carousel .info > a {
+        font-size: clamp(1rem, 4vw, 4rem);
+    }
+    .carousel > span:nth-child(1) ,
+    .carousel > span:nth-child(2) {
+        z-index: -1;
+    }
+    .carousel > span:nth-child(1){
+        width: 300px;
+        height: 300px;
+        top: -10%;
+        right: 60%;
+    }
+    .carousel > span:nth-child(2) {
+        width: 300px;
+        height: 300px;
+        bottom: -30%;
+        left: -40%;
+    }
+    .carousel > img {
+        position: absolute;
+        right: -1%;
+        bottom: -5%;
+        width: 25%;
+    }
+    
+    .carousel .list .items .item img {
+        width: 85%;
+    }
+    .carousel .list .arrows {
+        justify-content: space-evenly;
+        gap: 0;
+    }
+:root{
+    --item3-transform: translate(70%, 50%) scale(0.4) rotate(15deg);
+    --item4-transform: translate(150%, 20%) scale(0.5);
+}
 
+
+    .best{
+        width: 90%;
+        gap: 30px;
+    }
+    #title {
+        width: 100%;
+        font-size: clamp(1rem, 10vw, 4rem);
+        order: 1;
+    }
+    #span {
+        width: 90%;
+        order: 2;
+    }
+    .best .head .btns {
+        justify-content: space-evenly;
+        gap: 0px;
+        width: 50%;
+        order: 4;
+    }
 
     .best .head {
         height: auto;
@@ -1474,90 +1527,34 @@ footer .div2 .col .links p i{
     .best .track {
         height: auto;
         gap: 50px;
-    }
-    .best .track .product {
-        flex-direction: column;
-        padding-block: 20px;
-        width: 100%;
-        height: 450px;
-        padding-right: 0;
+        order: 3;
     }
 
-    .best .track .product .info {
-        width: 100%;
-        align-items: center;
-    }
-    .best .track .product .info .title {
-        font-size: 25px;
-        width: 100%;
-        text-align: center;
-        padding-left: 0px; 
-    }
-    .best .track .product .info .price {
-        font-size: 25px;
-        padding-left: 0px;
-        justify-content: center;
-    }
-    .best .track .product .info .price p {
-        font-size: 30px;
-    }    
-    .best .track .product .info .timer {
-        width: 95%;
-        gap: 0;
-    }
-
-
-
-
-    .overview{
-        max-height: 100%;
-        flex-direction: column;
-    }
-    .overview .over1, .overview .over2, .overview .over5, .overview .over6 {
-        width: 100%;
-    }
-    .overview .over3, .overview .over4 {
-        width: 100%;
-    }
-    .overview .over3 img{
-    width: 100%;
-}
-.overview .over4 img {
-    width: 60%;
-}
-
-
-
-    .products .head {
-        height: auto;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .products .head .title {
-        font-size: clamp(1rem, 8vw, 2rem);
-        width: 100%;
-        text-align: center;
-    }
-    .products .track .productcard {
-        flex: 0 0 100%;
-    }
     .adv1 {
         justify-content: center;
         height: auto;
         flex-direction: column-reverse;
         padding-left: 10px;
         padding-block: 15px;
+        gap: 50px;
     }
     .adv1 img {
-        width: 80%;
+        width: 45%;
         align-self: center;
     }
     .adv1 .info {
         width: 100%;
     }
     .adv1 .info p span {
-        font-size: clamp(1rem,12vw,3rem);
+        font-size: clamp(1rem,8vw,3rem);
         width: 100%;
+    }
+    .adv1 .info p, .adv2 .info p {
+        font-size: clamp(1rem, 5vw, 4rem);
+    }
+    .adv1 .info a, .adv2 .info a {
+        font-size: clamp(.5rem, 4vw, 4rem);
+        padding: 15px 20px;
     }
     .adv2 {
         justify-content: center;
@@ -1565,7 +1562,10 @@ footer .div2 .col .links p i{
         flex-direction: column-reverse;
         padding-left: 10px;
         padding-block: 15px;
-        background: url(adv2-back.png) no-repeat right 2% top 0%;
+        background-image: url(../banners/adv2-back.png);
+        background-size: cover;
+        background-position: center;
+        background-position: 97% 0px;
     }
     .adv2 img {
         width: 80%;
@@ -1575,23 +1575,212 @@ footer .div2 .col .links p i{
         width: 100%;
     }
     .adv2 .info p span {
-        font-size: clamp(1rem,12vw,3rem);
+        font-size: clamp(1rem,8vw,3rem);
+        width: 90%;
+    }
+
+
+
+    .deals {
+        width: 100%;
+        height: auto;
+        padding-block: 5vh;
+    }
+    .deals .head {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+        width: 90%;
+    }
+    .deals .head #title {
         width: 100%;
     }
-    
-    .blog .blogcontent {
+    .deals .content {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .deals .content >i {
+        font-size: clamp(1rem, 8vw, 4rem);
+    }
+    .deals .content .track{
+        order: 1;
+        width: 100%;
+        height: auto;
+        gap: 25%;
+        padding-block: 10px;
+    }
+    .deals .content .track > * {
+        scroll-snap-align: center;
+    }
+    .deals .content .track .card {
+        margin-left: 15%;
+    }
+    .deals .content .track .card {
+        flex: 0 0 90%;
+        gap: 20px;
+        padding: 20px 10px;
+        height: 400px;
+    }
+    .deals .content .track .card .div1 {
+        /* flex-direction: column; */
+        gap: 10px;
+        height: 30%;
+    }
+
+    .deals .content .track .card .div1 img {
+        width: 40%;
+        height: 100%;
+    }
+    .deals .content .track .card .div1 .rate {
+        width: 100%;
+        gap: 10px;
+    }
+    .deals .content .track .card .div1 .rate p {
+        font-size: clamp(1rem, 6vw, 3rem);
+    }
+    .deals .content .track .card .div1 .rate .stars{
+        justify-content: center;
+    }
+    .deals .content .track .card .div1 .rate .stars i{
+        font-size: clamp(1rem, 6vw, 3rem);
+    }
+    .deals .content .track .card .info {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    .deals .content .track .card .div2 span:nth-child(1),
+    .deals .content .track .card .div2 span:nth-child(2) {
+        font-size: clamp(.5rem, 8vw, 3rem);
+    }
+    .deals .content .track .card .para {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+    /* .deals .content .track .card .timer .time {
+        padding: 5px;
+    } */
+    .deals .content .track .card .timer .time span:nth-child(1){
+        font-size: clamp(.5rem, 6vw, 3rem);
+    }
+    .deals .content .track .card .timer .time span:nth-child(2) {
+        font-size: clamp(.5rem, 4vw, 3rem);
+    }
+
+
+
+
+
+
+
+    .colls {
         width: 90%;
         height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 25px;
+        gap: 5vh;
+        padding-block: 5vh;
     }
-    .blog .blogcontent .blogcard {
+    .colls .head {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }.colls .head #title {
+        width: 100%;
+        font-size: clamp(1rem, 7vw, 4rem);
+        order: 1;
+    }
+    .colls .head #span {
+        width: 100%;
+        order: 2;
+    }
+    .colls .head .btns {
+        display: flex
+    ;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 0px;
+        width: 50%;
+        order: 3;
+    }
+    .colls .track {
+        gap: 25%;
+        width: 100%;
+        height: auto;
+    }
+    .colls .track > * {
+        scroll-snap-align: center;
+        /* scroll-snap-stop: always; */
+    }
+    .colls .track > *.coll {
+        align-self: self-start  !important;
+        height: 100%;
+    }
+    .colls .track .coll {
+        flex: 0 0 100%;
+        padding: 0;
+        height: 400px;
+        padding: 20px 10px;
+        gap: 20px;
+    }
+    .colls .track .coll .prods {
+        height: 50%;
+    }
+    .colls .track .coll .prods .prod img {
+        width: 100%;
+        height: 70%;
+        transform: scaleX(1) scaleY(1);
+        object-fit: fill;
+    }
+    .colls .track .coll .prods .prod p {
+        font-size: clamp(1rem, 5vw, 4rem);
+    }
+    .colls .track .coll .price {
+        font-size: clamp(1rem, 6vw, 4rem);
+    }
+    .colls .track .coll .info {
+        font-size: clamp(.5rem, 4vw, 2rem);
+    }
+
+
+
+    .servs {
+        width: 90%;
+    }
+    .servs .head {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+    .servs .head #title {
         width: 100%;
     }
-    .blog .blogcontent .blogcard .bloghead {
-        font-size: clamp(1rem,7vw,4rem);
+    .servs .head #span {
+        width: 100%;
     }
+
+    .servs .content {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .servs .content .serv {
+        width: 100%;
+    }
+    .servs .content .serv p:nth-child(1) {
+        font-size: clamp(1rem, 7vw, 4rem);
+    }
+    .servs .content .serv p:nth-child(2) {
+        font-size: clamp(.5rem, 4.5vw, 4rem);
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
