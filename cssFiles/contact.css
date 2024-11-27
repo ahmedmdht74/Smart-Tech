@@ -9,14 +9,7 @@
     font-family: "Arial Rounded MT Bold" ;
     src: url(../font1/arialroundedmtbold.ttf);
 }
-/* @font-face {
-    font-family: Arial ;
-    src: url(../font2/arial_bolditalicmt.ttf);
-} */
-/* @font-face {
-    font-family: Arial ;
-    src: url(../font2/arial_bolditalicmt.ttf);
-} */
+
 
 :root{
     --font1: "Arial Rounded MT Bold" ;
