@@ -1512,6 +1512,10 @@ footer .div2 .col .links p i{
         width: 90%;
         order: 2;
     }
+    .best  {
+        align-items: center;
+        width: 100%;
+    }
     .best .head .btns {
         justify-content: space-evenly;
         gap: 0px;
@@ -1523,12 +1527,33 @@ footer .div2 .col .links p i{
         height: auto;
         flex-direction: column;
         gap: 20px;
+        width: 90%;
     }
     .best .track {
         height: auto;
-        gap: 50px;
+        gap: 35%;
         order: 3;
+        width: 90%;
     }
+    .best .track .cat {
+        flex: 0 0 75%;
+        height: 220px;
+        padding: 20px 10px;
+    }
+    .best .track .cat:nth-child(1) {
+        margin-left: 15%;
+    }
+    .best .track .cat:last-child {
+        margin-right: 15%;
+    }
+    .best .track > * {
+        scroll-snap-align: center;
+    }
+        .best .track .cat img{
+            width: 90%;
+            height: 60%;
+            object-fit: fill;
+        }
 
     .adv1 {
         justify-content: center;
@@ -1614,9 +1639,14 @@ footer .div2 .col .links p i{
     .deals .content .track > * {
         scroll-snap-align: center;
     }
-    .deals .content .track .card {
+    .deals .content .track .card:nth-child(1) {
         margin-left: 15%;
+
     }
+    .deals .content .track .card:last-child{
+        margin-right: 15%;
+    }
+
     .deals .content .track .card {
         flex: 0 0 90%;
         gap: 20px;
@@ -1773,14 +1803,3 @@ footer .div2 .col .links p i{
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
