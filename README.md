@@ -1,4 +1,4 @@
-|    [#1589F0]pages      |  Home Page  |  About Page  |  Contact Us Page  |  Forms Page  |  Shop Page  | Product Page|  Cart Page       |  Chect Out Page  |  DashBoard Page  |
+|    pages      |  Home Page  |  About Page  |  Contact Us Page  |  Forms Page  |  Shop Page  | Product Page|  Cart Page       |  Chect Out Page  |  DashBoard Page  |
 | ------------- | ----------- | ------------ | ----------------- | ------------ | ----------- | ----------- | ---------------- | ---------------  | ---------------- |
 | UI & UX       |    Done     |    Done      |    Done           |     Done     |   Done      |    Done     |       Done       |      Done        |     Done         |
 | Front-end     |    Done     |    Done      |    Done           |     Done     |   Done      |             |                  |                  |     Done         |
