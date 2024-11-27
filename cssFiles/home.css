@@ -85,7 +85,13 @@ nav{
     justify-content: space-between;
     align-items: center;
     z-index: 99999999;
-    background-color: #2e333cbf;   
+    background-color: #2e333cbf;  
+    animation-name: top;
+    animation-duration: 1s;
+    animation-delay: .2s;
+    animation-timing-function: linear; 
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 nav::after {
     content: "";
@@ -384,6 +390,7 @@ nav .icons i{
     position: absolute;
     background: linear-gradient(215.99deg, rgba(50, 56, 65, 0.72) 29.51%, rgba(115, 114, 115, 0.56) 85.2%);
 
+
 }
 .carousel > span:nth-child(1){
     width: 800px;
@@ -391,6 +398,12 @@ nav .icons i{
     top: -55%;
     right: -15%;
     border-radius: 50%;
+    animation-name: scale;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: .3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 .carousel > span:nth-child(2){
     width: 400px;
@@ -399,6 +412,12 @@ nav .icons i{
     left: -15%;
     border-radius: 50%;
     background: linear-gradient(to left, rgba(50, 56, 65, 0.8) 16.72%, rgba(166, 165, 167, 0.56) 97.87%);
+    animation-name: scale;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: .3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 
 }
 .carousel > img{
@@ -406,6 +425,12 @@ nav .icons i{
     right: -2%;
     bottom: -1%;
     width: 15%;
+    animation-name: scale;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: .3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 .carousel .info{
     width: 49%;
@@ -417,6 +442,12 @@ nav .icons i{
     font-family: var(--font1);
     text-transform: capitalize;
     gap: 5%;
+    animation-name: left;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: .3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 }
 .carousel .info p:nth-child(1){
     color: var(--color1);
@@ -451,6 +482,12 @@ nav .icons i{
     align-items: center;
     flex-direction: column;
     position: relative;
+    animation-name: right;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: .3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
     /* position: absolute; */
     /* max-width: 90%; */
     /* left: 50%; */
@@ -655,6 +692,13 @@ nav .icons i{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation-name: bottom;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0vh 20vh ;
+    /* transform: scale(.1); */
+    opacity: 0;
 }
 
 /*
@@ -709,6 +753,12 @@ title:
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     gap: 6%;
+    animation-name: bottom;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0vh 35vh ;
+    opacity: 0;
 }
 .best .track > * {
     scroll-snap-align: end;
@@ -723,6 +773,7 @@ title:
     flex-direction: column;
     box-shadow: 0 0 100px 30px #0000001f inset , 0 0 10px 10px #0000001f;
     padding: 10px 5px;
+
     /* gap: 10px; */
 }
 .best .track .cat img{
@@ -757,6 +808,7 @@ title:
     align-items: center;
     flex-direction: row;
     padding-left: 10%;
+
 }
 .adv1::before,
 .adv2::before{
@@ -779,6 +831,12 @@ title:
     flex-direction: column;
     gap: 20px;
     width: 40% ;
+    animation-name: left;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0vh 30vh ;
+    opacity: 0;
 }
 .adv1 .info p,
 .adv2 .info p{
@@ -825,6 +883,7 @@ title:
     width: 15%;
     align-self: start;
     animation: advs 3s linear infinite alternate;
+    
 }
 .adv1 {
     margin-block: 5vh;
@@ -883,6 +942,12 @@ title:
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation-name: bottom;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0vh 15vh ;
+    opacity: 0;
 }
 .colls .head #title{
     width: 40%;
@@ -931,6 +996,12 @@ title:
     gap: 10%;
     padding-block: 10px;
     padding-inline: 10px;
+    animation-name: bottom;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0vh 60vh ;
+    opacity: 0; 
 }
 .colls .track > * {
     scroll-snap-align: end;
@@ -950,6 +1021,7 @@ title:
     box-shadow: 0 1px 4px var(--shadow2);
     background: linear-gradient(142deg, #21252B 8.07%, #323841 50%, #21252B 91.93%);
     border-radius: 45px;
+
 }
 .colls .track .coll .prods{
     display: flex;
@@ -1037,6 +1109,12 @@ title:
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation-name: bottom;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0vh 15vh ;
+    opacity: 0;
 }
 .deals .head #title{
     width: 30%;
@@ -1064,8 +1142,12 @@ title:
     position: relative;
     gap: 7px;
     transition: 1s;
-    /* padding-inline: 1%; */
-
+    animation-name: bottom;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0vh 80vh ;
+    opacity: 0;
 }
 .deals .content .track > * {
     scroll-snap-align: end;
@@ -1244,6 +1326,12 @@ title:
     display: flex;
     justify-content: space-between;
     align-items: center;
+    animation-name: bottom;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0vh 15vh ;
+    opacity: 0;
 }
 .servs .head #title{
     width: 25%;
@@ -1275,6 +1363,12 @@ title:
     border-radius: 15px;
     position: relative;
     overflow: hidden;
+    animation-name: bottom;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0vh 30vh ;
+    opacity: 0;
 }
 .servs .content .serv p:nth-child(1){
     text-transform: capitalize;
@@ -1425,9 +1519,18 @@ footer .div2 .col .links p i{
 
 
 
-/* ------------------------------------- */
-/* ------------------------------------- */
-/* ------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
 @media  (max-width:767px) {
     nav{
         display: none;
