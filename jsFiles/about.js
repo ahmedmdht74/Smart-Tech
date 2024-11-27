@@ -59,21 +59,12 @@ function team() {
         },
         { 
             img: "5",
-            name: "mariam rashed",
-            title: "back-end developer",
-            acc1:"",
-            acc2:"",
-            acc3: "",
-            animation:"left"
-        },
-        { 
-            img: "6",
             name: "mostafa belal",
             title: "back-end developer",
             acc1:"",
             acc2:"",
             acc3: "",
-            animation:"right"
+            animation:"left"
         },
     ];
     const content = document.querySelector(".team .content");
